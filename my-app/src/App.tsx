@@ -1,4 +1,4 @@
-import NavBar from './NavBar'
+import { BasicCard } from "./BasicCard"
 
 
 
@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-<NavBar />
+<BasicCard />
   )
 }
 
