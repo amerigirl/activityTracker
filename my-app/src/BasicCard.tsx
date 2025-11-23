@@ -9,6 +9,7 @@ import {
   CardFooter,
   CardHeader,
   CardPreview,
+  Body1Strong,
 } from "@fluentui/react-components";
 
 
@@ -22,61 +23,66 @@ const useStyles = makeStyles({
 
 })
 
-export const BasicCard = (): JSXElement =>{
- 
-const classes = useStyles();
-//card: has a details click to open a popover that gives more info
-/**card has: 
- * 1. an image of the activity
- * 2. the activity name
- * 3. a details button --> popup
- * 4. completed --> make a checkbox
- * 5. fun letters
- * 6. soft colors-->andom color array chosen randomly 
- */
-const cardData = 
-/**activities: 
- * Get some reading in :) , Study time!, Learn something, rest and rejuvenate, errands
- * 
- */
-[
-  {
-    activity: "In a good book",
-    image: '',
+export const BasicCard = (): JSXElement => {
 
-  }, 
-    {
-    activity: "Study Time",
-    image: '',
+  const classes = useStyles();
+  //card: has a details click to open a popover that gives more info
+  /**card has: 
+   * 1. an image of the activity
+   * 2. the activity name
+   * 3. a details button --> popup
+   * 4. completed --> make a checkbox
+   * 5. fun letters
+   * 6. soft colors-->andom color array chosen randomly 
+   */
+  const cardData =
+    [
+      {
+        activity: "In a good book",
+        image: '',
 
-  },   {
-    activity: "Learn Something",
-    image: '',
+      },
+      {
+        activity: "Study Time",
+        image: '',
 
-  },   {
-    activity: "Rest and Rejuvenate",
-    image: '',
+      }, {
+        activity: "Learn Something",
+        image: '',
 
-  },   {
-    activity: "The Big Er(rands!)",
-    image: '',
+      }, {
+        activity: "Rest and Rejuvenate",
+        image: '',
 
-  },   {
-    activity: "Clean and Sing",
-    image: '',
+      }, {
+        activity: "The Big Er(rands!)",
+        image: '',
 
-  }, 
+      }, {
+        activity: "Clean and Sing",
+        image: '',
 
-]
+      },
 
- return (
+    ]
+//when the card gets clicked, theres a popup--nums 1-6 
+  return (
+    <div>
+      {cardData.map((card, idx) => {
 
-  
-<Card className={classes.card} >
-<CardHeader />
+        return (
+          <Card role="button" className={classes.card} key={idx}>
+            <Body1Strong>
+              {card.activity}
+            </Body1Strong>
+            <CardPreview />
+          </Card>
+        )
+      })}
 
-</Card>
 
- )
+    </div>
 
+  )
 }
+
